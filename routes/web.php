@@ -25,6 +25,10 @@ Route::get('usuarios/add', function(){
 	return "Agregar nuevo usuario";
 });
 
+Route::get('/usuarios/{id}/edit', function($id){
+	return "Editar usuario {$id}";
+})->where('id', '[0-9]+');
+
 Route::get('/saludo/{name}/{nickname?}', function ($name, $nickname = null) {
     $name = ucfirst($name);
     if ($nickname) {
